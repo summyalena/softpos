@@ -1,0 +1,37 @@
+.trustedby {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.trustedby h6 {
+  color: var(--text-color);
+  font-family: 'GeneralSans-Regular';
+  font-size: var(--text-md);
+  line-height: 20px;
+}
+
+.slideContainer {
+  width: 80%;
+  height: 100%;
+}
+
+.slide {
+  height: 50px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide > img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+
+}

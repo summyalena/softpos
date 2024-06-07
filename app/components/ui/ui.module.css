@@ -1,0 +1,30 @@
+.sectionContainer {
+  padding: 2rem 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.sectionContainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  color: var(--nude-color);
+}
+
+@media (min-width: 768px) {
+  .sectionContainer {
+    padding: 2.5rem 6rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1180px){
+  .sectionContainer {
+    padding: 2.5rem;
+  }
+}

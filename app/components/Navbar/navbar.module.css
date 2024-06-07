@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.navContainer {
+  padding: 1rem 6rem;
+  z-index: 5;
+  width: 100%;
+  background-color: transparent;
+}
+
+.navContainer > div {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.authButtons {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.authButtons > li:first-child,
+.authButtons > li:last-child {
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.authButtons > li:first-child {
+  color: var(--primary-color);
+}
+
+.authButtons > li:last-child {
+  background-color: var(--primary-color);
+  color: var(--nude-color);
+}
+
+.navContainer > div > button {
+  display: none;
+}
+
+.navList {
+  gap: 3rem;
+  padding-right: 5rem;
+}
+
+.navList > li,
+.authButtons > li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 25px;
+  font-size: 0.9rem;
+}
+
+.lastInfo {
+  align-self: center;
+}
+
+.active {
+  color: var(--primary-color-1);
+}
+
+
+@media (min-width: 800px) and (max-width: 1024px) {
+  .navList {
+    gap: 2.5rem;
+    padding-right: 0;
+  }
+  
+}
+
+@media (max-width: 788px) {
+  .navContainer {
+    padding: 1rem;
+    position: fixed;
+  }
+
+  .authButtons {
+    display: none;
+  }
+
+  .navContainer > div > button {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    height: 40px;
+    width: 40px;
+    border: none;
+    align-items: flex-start;
+    z-index: 20;
+    position: relative;
+    background-color: transparent;
+    color: var(--primary-color-2);
+  }
+
+  .navContainer > div > button > span {
+    background-color: var(--primary-color-2);
+    width: 20px;
+    height: 2px;
+    border-radius: 0.3rem;
+    display: block;
+  }
+
+  .navContainer > div > button > span:nth-child(2) {
+    width: 17px;
+    border-radius: 0.3rem;
+  }
+
+  .navContainer > div > button > span:nth-child(3) {
+    width: 13px;
+    border-radius: 0.3rem;
+  }
+
+  .navList {
+    position: fixed;
+    top: 72px;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    height: 50dvh;
+    padding-right: 0;
+    width: 100%;
+    color: black;
+    padding-top: 3rem;
+    z-index: 5;
+    font-size: 1.5rem;
+    background: linear-gradient(to left, rgba(253, 253, 253, 0.808) 0%, rgba(255, 254, 254, 0.986) 100%);
+    transform: translateX(100%);
+    transition: 0.9s ease-in-out;
+  }
+
+  .navList > li {
+    opacity: 1;
+    transition: opacity 3s ease-in;
+    transition-delay: 3s;
+  }
+
+  .navList > li:hover {
+    border-bottom: 1.2px solid var(--primary-color-1);
+    opacity: 1;
+    transition-delay: 0;
+  }
+
+  .mobile {
+    transform: translateX(0);
+    transition: 0.9s ease-in-out;
+  }
+
+  .closemobile {
+    transform: translateX(100%);
+  }
+
+  .line {
+    background-color: var(--primary-color);
+  }
+
+  .lastInfo {
+    align-self: flex-start;
+  }
+}
