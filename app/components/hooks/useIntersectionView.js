@@ -1,17 +1,33 @@
-'use client';
+import { useState, useEffect, useRef } from 'react';
 
-import { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-
-const useIntersectionView = (options) => {
-  const { ref, inView } = useInView(options);
+const useIntersectionView = ({ threshold }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
-    if (inView) {
-      setIsVisible(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      {
+        threshold: threshold,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }, [inView]);
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [threshold]);
 
   return [ref, isVisible];
 };
