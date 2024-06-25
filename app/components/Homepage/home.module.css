@@ -58,7 +58,7 @@
 }
 
 .heroHeading > h1 {
-  font-size: var(--text-lg);
+  font-size: 2rem;
 }
 
 .heroHeading > p > span,
@@ -92,10 +92,6 @@
 
 .goalsWrapper {
   gap: 8rem;
-}
-
-.paraText {
-  max-width: 47ch;
 }
 
 .budgetTextWrap p,
@@ -273,6 +269,40 @@
   padding: 0.6rem 1.2rem;
 }
 
+.animatePayInfo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+}
+
+.animatePayInfo ul {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.animatePayInfo li {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0 10px;
+  min-width: 80px;
+}
+
+.animatePayInfo li.active {
+  background-color: black;
+  color: white;
+}
+
+.animatePayInfo li.inactive {
+  background-color: white;
+  color: black;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper,
   .budgetWrapper,
@@ -285,12 +315,17 @@
 
   .heroHeading > h1 {
     line-height: 4rem;
+    font-size: var(--text-lg);
   }
 
   .heroHeading > p > i,
   .budgetTextWrap > div > p > i,
   .goalHeading > p > i {
     font-size: 1.2rem;
+  }
+
+  .paraText {
+    max-width: 47ch;
   }
 
   .wrapper {
@@ -327,5 +362,5 @@
 
   .goalsWrapper {
     gap: 1rem;
-   }
+  }
 }
