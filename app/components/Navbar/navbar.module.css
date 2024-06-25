@@ -90,11 +90,10 @@
     z-index: 20;
     position: relative;
     background-color: transparent;
-    color: var(--primary-color-2);
   }
 
   .navContainer > div > button > span {
-    background-color: var(--primary-color-2);
+    background-color: var(--primary-color);
     width: 20px;
     height: 2px;
     border-radius: 0.3rem;
@@ -117,14 +116,14 @@
     right: 0;
     flex-direction: column;
     align-items: center;
-    height: 50dvh;
+    height: 100dvh;
     padding-right: 0;
     width: 100%;
     color: black;
     padding-top: 3rem;
-    z-index: 5;
+    z-index: 100;
     font-size: 1.5rem;
-    background: linear-gradient(to left, rgba(253, 253, 253, 0.808) 0%, rgba(255, 254, 254, 0.986) 100%);
+    background-color: var(--nude-color);
     transform: translateX(100%);
     transition: 0.9s ease-in-out;
   }
